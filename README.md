@@ -5,7 +5,7 @@
 #####Milyen kommunikációs típust ismerünk a perifériákkal?
    -Lekérdezés átvitel (polling), megszakítás (interrupt), közvetlen memória elérés (DMA)
 #####Mi a "virtuális gép" operációs rendszer struktúra lényege, honnan ered ez az elv?
-   -Az IBM-től származik az elv, nem érdekel, hogyan teszi,át akarok másolni egy képet.
+   -Az IBM-től származik az elv. Pl. nem érdekel, hogyan teszi át akarok másolni egy képet.
 #####Mi a CHS címzés?
    -Cilinder-Head-Selecor, mágneslemeznél adatok címzésére használjuk
 #####Írja le az SSTF ütemezés lényegét és jellemzőit!
@@ -52,7 +52,7 @@
    -First Come - First Service ahogy jönnek a kérések úgy szolgáljuk ki őket.
 #####Milyen periféria kommunikációs módot ismer?
 #####Mi az Ext2FS, van-e MBR-je?-je.   
-   -Linux partíció és van MBR
+   -Linux fájlrendszer és van MBR.
 #####Mi a TLB, mi a szerepe?
 #####RAID-ek közti különbségek.
 #####Honnan származik, és mi a lényege a virtuális gépek(szerver) használatának?
@@ -61,6 +61,8 @@
 #####Mi a Robin-Robin ütemezés lényege?
 #####Milyen partíciónak nincs i-node táblája?
 #####Mi a RAID0+1 illetve RAID1+0 lemezek közti különbség?
+   -RAID 1+0: Tükrös diszkekből vonunk össze többet
+   -RAID 0+1: Raid 0 összevont lemezcsoportból veszünk kettőt.
 #####Honnan származik az op.rendszer virtualizáció, mik a jellemzői, mi köze a virtuális memóriakezeléshez?
 #####Mit nevezünk szegmentált memóriakezelésnek?
 #####Mi a valós idejű ütemezés lényege?
