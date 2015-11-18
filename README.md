@@ -163,6 +163,8 @@
 
 #####Mit jelent az "interleave" fogalma?
 #####Mit nevezünk valós idejű operációs rendszernek?
+   - Olyan operációs rendszerek, amelyekben bizonyos feladatoknak, műveleteknek garantál minimum vagy maximum válaszideje van.
+
 #####Milyen fájlrendszer specifikus fájlokat ismer? Hol találhatók átalában?
    - Karakter,blokk fájlok, /dev könyvtár
 
@@ -196,3 +198,4 @@
 ### Források:
    - előadás diák
    - iNfeRuS4 innen: elte.sharq.hu
+   - lintaba: http://wiki.osdev.org/Real-Time_Systems 
