@@ -1,5 +1,7 @@
 #Oprendszerek elmélet
 
+## Ezek nem hivatalos zh kérdések, és nem vagyok benne biztos, hogy minden válasz helyes.
+
 #####Mi az operációs rendszer kernel módja és felhasználói módja közti különbség?
    - Különböző védelmi szintek, kernel mód -> felügyelt mód, felhasználói mód -> oprendszer feladatok
 
