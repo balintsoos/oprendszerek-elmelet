@@ -88,15 +88,28 @@
    - a felhasználókra vonatkoztatuk.
 
 #####Milyen I/O eszközkategóriákat ismer? Mi a kivétel?
+   - Blokkos eszközök
+   - Karakteres eszközök
+   - Időzítő - kivétel nem blokkos és nem Karakteres
+
 #####Mi az MBR?
    - Master Boot Record,a 0.szektor. 2 particíója van az elsőről töltődik be az operációs rendszer
 
 #####Mi a memóriakezelő feladata?
+   - Memória nyilvántartása amelyek szabadok
+   - Memóriát foglal a folyamatoknak
+   - Memóriát szabadít fel
+   - Csere vezérlése a RAM és a lemezek között
+
 #####Mit értünk tevékeny várakozás alatt?
    - A kölcsönös kizárásnál a CPU-t üres ciklusban járatjuk a várakozás során, így a CPU időt pazaroljuk pl. TSL, Peterson
 
 #####Mit értünk folyamatok erőforrás görbélyén, mire használható?
+   - Folyamatok erőforrás görbéje ábrázolja, hogy mikor mennyi erőforrásra van szüksége a folyamatoknak, és hol alakulhat ki holtpont, ez segít úgy tervezni, hogy elkerüljük a holtpontot, pl. bankár algoritmusnál használjuk.
+
 #####Mit értünk virtuális memóriakezelésen, mi a lényege? Mi a lapozás?
+   - Egy program használhat több memóriát, mint a rendelkezésre álló fizikai méret. Egy program a virtuális memória térben tartózkodik. A vírtuális címtér lapokra van osztva. Ha az MMU látja, hogy egy lap nincs a memóriában, akkor laphibát okoz, op. rendszer kitesz egy lapkeretet majd behozza a szükséges lapot.
+
 #####Mi a szoftveres és a hardveres megszakítás közti különbség? Van egyáltalán?
    - A szoftveres megszakítás kezelése azonos a hardveres megszakítás kezelésével.
 
@@ -115,9 +128,6 @@
 
 #####RAID-ek közti különbségek.
 #####Honnan származik, és mi a lényege a virtuális gépek(szerver) használatának?
-#####Ismertesse a folytonos tárkiosztás(lemez) stratégiáit!
-#####Mi a szemafor, mikor nem használható?
-
 #####Mi a Round-Robin ütemezés lényege?
    - Körben járó ütemezés. Mindenkinek van időszelete, aminek a végén, vagy blokkolás esetén jön a következő folyamat. Időszelet végén a körkörös listában következő jön. Pártatlan, egyszerű. Egy listában tároljuk a folyamatok jellemzőit és ezen megyünk körbe.
 
@@ -130,6 +140,8 @@
 
 #####Honnan származik az op.rendszer virtualizáció, mik a jellemzői, mi köze a virtuális memóriakezeléshez?
 #####Mit nevezünk szegmentált memóriakezelésnek?
+   - Egymástól független címtereket hozunk létre, ezeket szegmenseknek nevezzük. 2 részből áll az elérési címük : szegmens szám és ezen belüli eltolás.
+   
 #####Mi a valós idejű ütemezés lényege?
    - Garantáljuk adott határidőre a válaszadást. Hard Time - nem módosítható határidők, Soft Real Time - kis mértékű időbeli eltolódás tolerálható. A programot több kisebb folyamatokr a bontják.
 
@@ -139,34 +151,43 @@
    - Felhasználói mód: oprendszer, feladatok
 
 #####Ismertesse a "probléma figyelmen kívül hagyása" módszert! Hol alkalmazzák?
+   - Holtpont kezelési módszer, egyszerűen figyelmen kívül hagyuk, hátha nem okoz gondot, nagyon ritkán alakul ki és költséges a figyelése, ezért nem is figyelünk rá, Windows, Unix ezt használja.
+
 #####Mi az MFT?
    - Master File Table, ezzel kezdődik az NTFS partició, 16 attribútum ad egy fájl bejegyzést, minden attribútum max 1kb. Ha ez nem elég, akkor egy attribútum mutat a folytatásra. Nincs fájlméret maximum.
 
 #####Mi a probléma a kölcsönös kizárás szigorú váltogatásos megvalósítással?
    - Egy folyamat blokkolhatja saját magát.
+
 #####Mit jelent az "interleave" fogalma?
 #####Mit nevezünk valós idejű operációs rendszernek?
 #####Milyen fájlrendszer specifikus fájlokat ismer? Hol találhatók átalában?
    - Karakter,blokk fájlok, /dev könyvtár
 
-#####Mik a program-folyamat-szál közti különbségek?
 #####Mit nevezünk fájlrendszernek, mi köze van az FCFS ütemezéshez?
    - A számítógépes fájlok tárolásának és rendszerezésének a módszere.A sorrendi ütemezéssel olvashatunk és írhatunk a lemezre, aminek a rendszerét a fájlrendszer adja.
 
 #####I/O szoftver modellje, milyen eszközkategóriákat ismer?
 #####Mit nevezünk kritikus tevékenységnek?
-   - 
+   -
 #####Mire szolgálnak a lapozási algoritmusok?
+   - Ha nincs egy virtuális című lap a memóriában, akkor egy lapot ki kell dobni, és berakni ezt az új lapot.
+
 #####Mi a különbség folyamatok és szálak között? Van egyáltalán?
    - A szál egy folyamaton belüli utasítás sor. Lehet több is egy folyamaton belül
    - csak a folyamatoknak van: címtartománya, globális változója, megnyitott fájl leírója, gyermek folyamata, szignálkezelője, ébresztője
 
 #####Ismertesse a laptáblák szerepét! Vam köze a TLB-Hez?
+   - A virtuális címtér lapokra van osztva,laptábána tároljuk a lapokat. Ezeken keresztül tudjuk elérni a memória lapjait.  64 bites címezésnél ez már megvalósíthatatlan, ezért használunk TBL-t mellette.
+
 #####Miért hasznos a kölcsönös kizárás üzenetküldéses megvalósítása?
    -
 #####Mire használható a monitor?
    - Kölcsönös kizárásra, magasabb szinten. Akkor használható jól, ha CPU-knak közös memóriájuk van.
+
 #####Mire jó a "Dirty-bit", hol használják?
+   - Az MMU a lapok kezelésénél használja, ha a dirty bit 1 akkor módosult a lpkeret memória azaz lemezre íráskor tényleg ki kell írni.
+
 #####Mi a CHS-LBA címzés közti különbség? Van egyáltalán?
    - CHS korlát 504MB, LBA minden szektor egyedi számot kap. A BIOS a megszakítások paramétereit az átalakított geometriából lemez geometriává alakítja CHS-nél, míg szektor számmá LBA-nál.
 
