@@ -173,7 +173,8 @@
 
 #####I/O szoftver modellje, milyen eszközkategóriákat ismer?
 #####Mit nevezünk kritikus tevékenységnek?
-   -
+   -Amikor egy processzus osztott erőforráshoz szeretne hozzáférni. Szigorúbb értelemben: egy változó kiolvasása történhet "párhuzamosan" (lock nélkül), ugyanis az összes processzus ugyanazt az értéket fogja megkapni, - még ha a kiolvasási folyamat közben a task scheduler el is veszi az adott processzustól a futási jogot -, míg módosítás esetén szükség van zárakra.
+   
 #####Mire szolgálnak a lapozási algoritmusok?
    - Ha nincs egy virtuális című lap a memóriában, akkor egy lapot ki kell dobni, és berakni ezt az új lapot.
 
