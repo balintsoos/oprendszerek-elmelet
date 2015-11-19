@@ -34,7 +34,7 @@
    - Dijkstra javasolja, egy változótípus. A szemafor tilosat mutat(0) akkor a folyamat elalszik, ha a szemafor>0, akkor be szabad lépni a kritikus szakaszra. Két művelete van: Belépéskor csökkentjük a szemafor értékét, kilépéskor növeljük. Ezek elemi műveletek.
 
 #####Mi a különbség a szemafor és a mutex között?
-   - A mutex bináris szemafor, csak 0 és 1 lehet az értéke, a szemafornak 0 vagy több, lehet egyszerre több folyamat a kritikus szakaszban(??)
+   - Egyszerre csak egy folyamat lehet védett szekcióban (kritikus szakaszban), mind szemafor, mind mutex esetén. A mutex (mutual exclusion [kölcsönös kizárás]) két folyamatra vonatkozik, a szemafor pedig több folyamat esetén használandó. HA semelyik processzus nincs a kritikus szekcióban, akkor a szemafor értéke 0, különben >0.
 
 #####Mit értünk folyamatok ütemezésén?
    - Több feladat futásakor el kell dönteni, hogy melyik fusson, ezt a döntést végzi el az ütemező egy algoritmus alapján.
