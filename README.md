@@ -12,7 +12,7 @@
    - Az IBM-től származik az elv. Pl. nem érdekel, hogyan teszi át akarok másolni egy képet.
 
 #####Mi a CHS címzés?
-   - Cilinder-Head-Selecor, mágneslemeznél adatok címzésére használjuk
+   - Cylinder-Head-Sector, mágneslemeznél adatok címzésére használjuk
 
 #####Írja le az SSTF ütemezés lényegét és jellemzőit!
    - Shortest Seek Time First-leghamarabb elérhetőt először. A legkisebb fejmozgatást részesíti előnyben, átlagos várakozás kicsi,
