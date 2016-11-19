@@ -186,7 +186,7 @@
    - A virtuális címtér lapokra van osztva,laptábána tároljuk a lapokat. Ezeken keresztül tudjuk elérni a memória lapjait.  64 bites címezésnél ez már megvalósíthatatlan, ezért használunk TBL-t mellette.
 
 1. Miért hasznos a kölcsönös kizárás üzenetküldéses megvalósítása?
-   -
+
 1. Mire használható a monitor?
    - Kölcsönös kizárásra, magasabb szinten. Akkor használható jól, ha CPU-knak közös memóriájuk van.
 
